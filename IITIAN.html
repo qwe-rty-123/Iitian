@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="gu"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IITIAN</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@700;800&family=Noto+Sans+Gujarati:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1226;--fg:#eef2fa;--mut:#9fadc9;--card:#151e3a;--line:#2a3658;--sa:#ff9933;--go:#f5c542;--ac:#38bdf8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.7 "Noto Sans Gujarati",system-ui,sans-serif}
+h1,h2,h3{font-family:"Noto Serif Gujarati",Georgia,serif;line-height:1.3;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+body.locked>:not(#lock):not(script){display:none}
+#lock{display:none;min-height:100vh;align-items:center;justify-content:center;padding:20px}
+body.locked #lock{display:flex}
+.pwbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px;max-width:340px;width:100%;text-align:center}
+input,textarea,select,button{font:inherit;color:var(--fg)}
+input,textarea,select{width:100%;padding:10px 12px;margin:6px 0;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+button{padding:10px 16px;border:0;border-radius:6px;background:var(--sa);color:#1b1f3b;font-weight:600;cursor:pointer}
+.err{color:#ff6b6b;min-height:1.4em;margin:6px 0 0}
+header{padding:44px 0 36px;text-align:center;background:radial-gradient(circle at 50% 0,#ff993340,transparent 60%),linear-gradient(#141c3a,var(--bg));border-bottom:3px solid var(--sa)}
+.deities{font-size:44px;letter-spacing:10px}
+.crest{display:inline-block;margin:6px 0;padding:6px 18px;border:2px solid var(--go);border-radius:40px;color:var(--go);font-weight:600}
+h1{font-size:clamp(44px,13vw,84px);font-weight:800;color:var(--go);text-shadow:0 0 28px #ff993380;animation:glow 3s ease-in-out infinite alternate}
+@keyframes glow{to{text-shadow:0 0 44px #f5c542aa}}
+@media (prefers-reduced-motion:reduce){h1{animation:none}}
+header p{color:#d6def0;margin:6px 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:3px 14px;color:#d6def0;background:#ffffff10}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin:22px 0 8px}
+nav button{background:var(--card);color:var(--fg);border:1px solid var(--line)}
+nav button.on{background:var(--sa);color:#1b1f3b}
+section.tab{display:none;padding:10px 0 20px}section.tab.on{display:block}
+.rule{background:var(--card);border-left:6px solid var(--ac);padding:12px 16px;border-radius:6px;margin:10px 0;color:var(--mut)}
+.bt{margin:18px 0 6px;font:800 21px "Noto Serif Gujarati",serif;color:var(--go)}
+.row{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin:6px 0}
+.rk{font-weight:800;min-width:34px;color:var(--sa)}.nm{flex:1}.mk{font-weight:600}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.task{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0}
+.task b{color:var(--go)}
+.rice{border-left:6px solid #94a3b8}
+.q{display:grid;gap:12px;margin:30px 0}.q div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 18px;font:700 18px/1.7 "Noto Serif Gujarati",serif;text-align:center}
+footer{text-align:center;padding:20px;color:var(--mut)}
+:focus-visible{outline:3px solid var(--go);outline-offset:2px}
+color-scheme:dark}
+:root{--bg:#09090f;--fg:#f6f0df;--mut:#b4ab92;--card:#14131c;--line:#3a3322;--sa:#d4af37;--go:#f1d37a;--ac:#8b1d3a}
+body{background:radial-gradient(circle at 20% 0,#2a1a05 0,transparent 40%),var(--bg)}
+header{background:radial-gradient(circle at 50% 0,#d4af3733,transparent 60%),linear-gradient(#17120a,var(--bg));border-bottom:2px solid var(--sa)}
+.sg{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.sc{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:linear-gradient(#1c1a26,var(--card));border:1px solid var(--sa);color:var(--fg)}
+.av{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--sa);display:flex;align-items:center;justify-content:center;background:#241d0c;color:var(--go);font:800 32px "Noto Serif Gujarati",serif}
+.pf{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:14px 0}.pf .av{width:120px;height:120px}
+.ch{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px;margin:8px 0}.ch svg{width:100%;height:auto;color:var(--mut)}
+.cg{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.bar{height:12px;border-radius:6px;background:linear-gradient(90deg,var(--ac),var(--sa))}
+.ob{display:grid;grid-template-columns:110px 1fr 54px;gap:8px;align-items:center;margin:6px 0}
+body::before,body::after{content:"";position:fixed;z-index:-1;width:60vmax;height:60vmax;border-radius:50%;filter:blur(80px);opacity:.22;animation:fl 18s ease-in-out infinite alternate;pointer-events:none}
+body::before{background:#d4af37;top:-30vmax;left:-20vmax}body::after{background:#8b1d3a;bottom:-30vmax;right:-20vmax;animation-delay:-9s}
+@keyframes fl{to{transform:translate3d(8vmax,6vmax,0) scale(1.15)}}
+@keyframes up{from{opacity:0;transform:translate3d(0,14px,0)}}
+.row,.task,.ch,.sc,.rule,.q div{animation:up .5s cubic-bezier(.2,.8,.2,1) both;transition:transform .25s,box-shadow .25s}
+.sc:hover,.row:hover,.task:hover,.q div:hover{transform:translate3d(0,-3px,0);box-shadow:0 10px 30px #d4af3733}
+h1{background:linear-gradient(90deg,#f1d37a,#fff3c4,#d4af37,#f1d37a);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:300% 0}}
+.deities{animation:bob 4s ease-in-out infinite alternate}@keyframes bob{to{transform:translate3d(0,-6px,0)}}
+.tb{width:100%;min-width:420px;border-collapse:collapse;background:var(--card)}.tb td,.tb th{border:1px solid var(--line);padding:8px 10px;text-align:left}.tb th{background:#241d0c;color:var(--go)}
+.wide{overflow-x:auto}ul.todo{padding-left:20px}ul.todo li{margin:6px 0}
+@media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}}
+#splash{position:fixed;inset:0;z-index:9999;display:flex!important;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle,#2a1a05,#09090f 70%);animation:spo .7s ease 2.5s forwards}
+@keyframes spo{to{opacity:0;visibility:hidden}}
+.sp-om{font-size:96px;animation:pin 1.2s cubic-bezier(.2,.8,.2,1) both,glw 1.4s ease-in-out infinite alternate}
+@keyframes pin{from{opacity:0;transform:scale(.3) rotate(-90deg)}}@keyframes glw{to{filter:drop-shadow(0 0 26px #f1d37a)}}
+.sp-t{font:800 54px "Noto Serif Gujarati",serif;color:var(--go);letter-spacing:6px;animation:up .8s .5s both}
+.sp-s{color:var(--mut);animation:up .8s .9s both}
+button{transition:transform .15s,filter .2s}button:active{transform:scale(.96)}nav button:hover{filter:brightness(1.2)}
+.bt::after{content:"";display:block;height:3px;width:60px;margin-top:4px;background:linear-gradient(90deg,var(--sa),transparent);animation:ln 1s both}@keyframes ln{from{width:0}}
+header::after{content:"";display:block;height:2px;margin-top:18px;background:linear-gradient(90deg,transparent,#f1d37a,transparent);background-size:200%;animation:sh 4s linear infinite}
+.bar{transform-origin:left;animation:scx 1s both}@keyframes scx{from{transform:scaleX(0)}}
+.sb{display:flex;margin:14px 0;border-radius:8px;overflow:hidden}.sb span{color:#111;font-weight:600;padding:8px 6px;text-align:center;font-size:13px;width:var(--w);transform-origin:left;animation:scx 1.1s var(--d) both}
+.tl div{border-left:4px solid var(--sa);background:var(--card);padding:8px 14px;margin:8px 0;border-radius:6px;animation:up .6s calc(var(--i)*.09s) both}
+@media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}#splash{display:none!important}}
+.r1,.r2,.r3{border-width:2px}
+.r1{border-color:#f1d37a;background:linear-gradient(90deg,#3a2c08,var(--card));animation:up .5s both,g1 1.8s ease-in-out infinite alternate}
+.r2{border-color:#cfd6e4;background:linear-gradient(90deg,#2a2d36,var(--card));animation:up .5s both,g2 2.2s ease-in-out infinite alternate}
+.r3{border-color:#cd7f32;background:linear-gradient(90deg,#33200d,var(--card));animation:up .5s both,g3 2.6s ease-in-out infinite alternate}
+@keyframes g1{to{box-shadow:0 0 24px #f1d37acc}}@keyframes g2{to{box-shadow:0 0 18px #cfd6e4aa}}@keyframes g3{to{box-shadow:0 0 16px #cd7f32aa}}
+.r1 .rk,.r2 .rk,.r3 .rk{font-size:26px;display:inline-block;animation:bob 1.6s ease-in-out infinite alternate}
+.pod{display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:14px 0}
+.pc{flex:1;max-width:150px;text-align:center}.pn{font-weight:600;margin-bottom:6px;word-break:break-word}
+.pb{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--h);border-radius:10px 10px 0 0;font:800 18px "Noto Serif Gujarati",serif;color:#111;transform-origin:bottom;animation:rise 1.1s cubic-bezier(.2,.8,.2,1) both}
+.p1{background:linear-gradient(#f9e08a,#d4af37);animation-delay:.6s}.p2{background:linear-gradient(#eef1f7,#a9b3c6);animation-delay:.3s}.p3{background:linear-gradient(#e0a060,#a8631f)}
+@keyframes rise{from{transform:scaleY(0)}}
+@media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}#splash{display:none!important}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:12px 0}
+.stc{background:linear-gradient(#1c1a26,var(--card));border:1px solid var(--sa);border-radius:8px;padding:12px;text-align:center;animation:up .6s both}
+.stc b{display:block;font:800 34px "Noto Serif Gujarati",serif;color:var(--go)}.stc span{color:var(--mut)}
+</style></head>
+<body class="locked">
+<div id="splash"><div class="sp-om">🕉️</div><div class="sp-t">IITIAN</div><div class="sp-s">મહેનત • શિસ્ત • સફળતા</div></div>
+<div id="lock"><form class="pwbox" id="lf"><h2>🙏 પાસવર્ડ</h2><input id="pw" type="password" autocomplete="off"><button>ખોલો</button><p class="err" id="e1"></p></form></div>
+<header><div class="wrap"><div class="deities" aria-label="ગણપતિ બાપા, સરસ્વતી માતા, શિવ">🕉️ 🪷 🔱</div>
+<div class="crest">🎓 IIT બોમ્બે • IIT</div><h1>IITIAN</h1>
+<p>ધોરણ ૧૧-૧૨ સાયન્સ • ગ્રુપ A (Maths) • JEE Main અને JEE Advanced</p>
+<div class="chips"><span class="chip">Board</span><span class="chip">GUJCET</span><span class="chip">JEE Main</span><span class="chip">JEE Advanced</span></div></div></header>
+<main class="wrap">
+<nav><button data-t="info" class="on">માહિતી</button><button data-t="study">6 કલાક અભ્યાસ</button><button data-t="main">JEE Main બેચ</button><button data-t="adv">JEE Advanced બેચ</button><button data-t="stu">વિદ્યાર્થીઓ</button><button data-t="top">Toppers અને Graph</button><button data-t="sub">માર્ક્સ મોકલો</button><button data-t="adm">Admin</button></nav>
+<div class="rule">બેચ માટે શરત: Board ≥ 86% અને GUJCET ≥ 110. શરત પૂરી ન થાય તો 200+ ગુણ હોય તો પણ બેચ નહીં, અને નામ Rice બેચમાં આવે.</div>
+<section class="tab on" id="info"><div class="stats" id="stats"></div><h2>બેચ કેવી રીતે મળે?</h2>
+<div class="rule">બેચ માટે બે શરત ફરજિયાત: <b>Board 86%+</b> અને <b>GUJCET 110+ (120 માંથી)</b>. બંને ન હોય તો 200+ ગુણ હોય તો પણ બેચ નહીં, નામ <b>Rice બેચ</b> માં આવે.</div>
+<div class="wide"><table class="tb"><tr><th>બેચ</th><th>JEE Main (300)</th><th>JEE Advanced (360)</th></tr><tr><td>Bronze</td><td>100+</td><td>85+</td></tr><tr><td>Silver</td><td>130+</td><td>95+</td></tr><tr><td>Platinum</td><td>151+</td><td>100+</td></tr><tr><td>Gold</td><td>171+</td><td>110+</td></tr><tr><td>Diamond</td><td>191+</td><td>130+</td></tr><tr><td>Supreme</td><td>211+</td><td>160+</td></tr><tr><td>Toppers</td><td>251+</td><td>190+</td></tr><tr><td>IIT Students</td><td>271+</td><td>230+</td></tr><tr><td>Legendary</td><td>290+</td><td>270+</td></tr><tr><td>MIT Students</td><td>300 (પૂરા)</td><td>360 (પૂરા)</td></tr></table></div>
+<p style="color:var(--mut)">દરેક બેચમાં ગુણ પ્રમાણે રેન્ક મળે છે (વધુ ગુણ = ઉપર). Rice બેચના વિદ્યાર્થીને નબળા ટોપિક પ્રમાણે દિવસ અને અઠવાડિયાના ટાસ્ક મળે છે.</p>
+<h2 style="margin-top:22px">NIT અને IIT માટે લાયકાત</h2>
+<div class="grid"><div class="task"><b>🎯 NIT માટે</b><br>Board 75%+<br>GUJCET 115+<br>JEE Main 210+</div><div class="task"><b>🏆 IIT માટે</b><br>Board 75%+<br>GUJCET 117+<br>JEE Advanced 200+</div></div><div class="grid"><div class="task"><b>🎯 NIT લાયક વિદ્યાર્થીઓ</b><div id="nl"></div></div><div class="task"><b>🏆 IIT લાયક વિદ્યાર્થીઓ</b><div id="il"></div></div></div>
+<h2 style="margin-top:22px">વિદ્યાર્થીએ શું શું કરવું?</h2>
+<ul class="todo"><li>રોજ Physics, Chemistry, Maths ને સરખો સમય આપો અને નિયમિત સ્વ-અભ્યાસ કરો.</li><li>પહેલા NCERT પૂરું કરો, પછી JEE સ્તરના પ્રશ્નો ઉકેલો.</li><li>અગાઉના વર્ષોના JEE Main અને Advanced પેપર ઉકેલો.</li><li>દર અઠવાડિયે ટેસ્ટ આપો અને ભૂલોની અલગ નોટબુક રાખો.</li><li>"વિદ્યાર્થીઓ" માં તમારું પેજ ખોલી નબળા ટોપિકના ટાસ્ક સમયસર પૂરા કરો.</li><li>Board અને GUJCET ની તૈયારી પણ સાથે રાખો, Board 86%+ જરૂરી છે.</li><li>7 કલાક ઊંઘ, થોડી કસરત અને મોબાઇલનો ઓછો ઉપયોગ.</li><li>નવા ગુણ "માર્ક્સ મોકલો" માં ઉમેરો જેથી તમારો ગ્રાફ અપડેટ રહે.</li></ul></section>
+<section class="tab" id="study"><h2>રોજ 6+ કલાક કેવી રીતે વાંચવું?</h2><p class="sub" style="color:var(--mut)">ધોરણ 11-12 સાયન્સ માટે એક નમૂનાનું સમયપત્રક. તમારા સમય પ્રમાણે ફેરવી શકો.</p>
+<div class="sb"><span style="--w:33%;--d:0s;background:#d4af37">Maths 2</span><span style="--w:25%;--d:.3s;background:#38bdf8">Physics 1.5</span><span style="--w:25%;--d:.6s;background:#f472b6">Chem 1.5</span><span style="--w:17%;--d:.9s;background:#34d399">Revision 1</span></div>
+<div class="tl"><div style="--i:0"><b>૫:૩૦ – ૬:૦૦</b><br>ઊઠો, પાણી, હળવી કસરત</div><div style="--i:1"><b>૬:૦૦ – ૮:૦૦</b><br>Maths • ૨ કલાક: થિયરી + પ્રશ્નો (અઘરો વિષય સવારે)</div><div style="--i:2"><b>શાળા / કોચિંગ</b><br>તમારા સમય પ્રમાણે</div><div style="--i:3"><b>૪:૩૦ – ૬:૦૦</b><br>Physics • ૧.૫ કલાક: કન્સેપ્ટ + નંબરવાળા પ્રશ્નો</div><div style="--i:4"><b>૬:૦૦ – ૬:૩૦</b><br>આરામ, રમત, નાસ્તો</div><div style="--i:5"><b>૬:૩૦ – ૮:૦૦</b><br>Chemistry • ૧.૫ કલાક: NCERT + યાદ રાખવાનું</div><div style="--i:6"><b>૮:૪૫ – ૯:૪૫</b><br>દિવસનું રિવિઝન + ભૂલોની નોટબુક • ૧ કલાક</div><div style="--i:7"><b>૧૦:૦૦</b><br>ઊંઘ (૭ કલાક)</div></div>
+<h2 style="margin-top:22px">વાંચવાની સાચી રીત</h2><div class="tl"><div style="--i:0">✨ 50 મિનિટ વાંચો, 10 મિનિટ વિરામ લો. આ રીતે 6 કલાકમાં થાક ઓછો લાગશે.</div><div style="--i:1">✨ ફોન બીજા રૂમમાં મૂકો, એક સમયે એક જ ટોપિક.</div><div style="--i:2">✨ વાંચ્યા પછી બુક બંધ કરી પોતે લખીને યાદ કરો (એ જ સાચું શીખવું).</div><div style="--i:3">✨ રિવિઝન: 1 દિવસ પછી, 1 અઠવાડિયા પછી, 1 મહિના પછી.</div><div style="--i:4">✨ દર રવિવારે 3 કલાકનો ટેસ્ટ અથવા અગાઉના વર્ષોનું પેપર.</div><div style="--i:5">✨ દર 3 દિવસે ભૂલોની નોટબુક ફરી વાંચો.</div><div style="--i:6">✨ રોજ 7 કલાક ઊંઘ, પાણી અને થોડું ચાલવું. થાકેલા મગજમાં કંઈ યાદ રહેતું નથી.</div></div></section>
+<section class="tab" id="main"><div id="lbm"></div></section>
+<section class="tab" id="adv"><div id="lba"></div></section>
+<section class="tab" id="stu"><input id="ss" type="search" placeholder="વિદ્યાર્થીનું નામ શોધો"><div id="stg" class="sg"></div><div id="prof"></div></section><section class="tab" id="top"><div id="tpl"></div></section>
+<section class="tab" id="sub"><h2>તમારા માર્ક્સ ઉમેરો</h2><p style="color:var(--mut)">માર્ક્સ Admin ની મંજૂરી પછી તમારા ગ્રાફમાં જોડાશે.</p>
+<select id="sn"></select><select id="se"><option>Board %</option><option>GUJCET</option><option>JEE Main</option><option>JEE Advanced</option></select><input id="sv" type="number" step="0.01" placeholder="તમારા ગુણ"><button id="sb" type="button">મોકલો</button><p class="err" id="e4"></p></section>
+<section class="tab" id="adm">
+<div id="alock"><form class="pwbox" id="af"><h3>Admin પાસવર્ડ</h3><input id="ap" type="password" autocomplete="off"><button>ખોલો</button><p class="err" id="e2"></p></form></div>
+<div id="apanel" hidden><h2>વિદ્યાર્થી ઉમેરો</h2>
+<input id="fn" placeholder="નામ"><div class="grid"><input id="ff2" placeholder="પિતાનું નામ"><input id="fc2" placeholder="ગામ/શહેર"><input id="fs" placeholder="ધોરણ (11/12)"><input id="fr" placeholder="રોલ નંબર"><input id="fp" type="number" placeholder="Physics (100)"><input id="fc" type="number" placeholder="Chemistry (100)"><input id="fm" type="number" placeholder="Maths (100)"></div>
+<input id="fph" type="file" accept="image/*"><p style="color:var(--mut);margin:4px 0">છેલ્લી 6 પરીક્ષા, અલ્પવિરામથી અલગ (જૂની પહેલા, નવી છેલ્લે):</p>
+<input id="hb" placeholder="Board % : 80,82,85,88,90,91"><input id="hg" placeholder="GUJCET (120): 95,100,104,108,112,115"><input id="hm" placeholder="JEE Main (300): 110,125,140,155,170,185"><input id="ha" placeholder="JEE Advanced (360): 60,75,90,100,120,135">
+<textarea id="fw" rows="3" placeholder="ભૂલ વાળા ટોપિક, દરેક લાઇનમાં: વિષય(P/C/M) ટોપિક ભૂલ. દા.ત. M Calculus 6"></textarea>
+<button id="add" type="button">ઉમેરો અને પબ્લિશ કરો</button><p class="err" id="e3"></p><h3 style="margin-top:18px">આવેલા માર્ક્સ</h3><div id="subs"></div><h3 style="margin-top:18px">બધા વિદ્યાર્થી</h3><div id="al"></div></div>
+</section>
+<div class="bt" style="text-align:center">સુવિચાર</div>
+<div class="q"><div>“સપના મોટા જુઓ, અને રોજ થોડું થોડું તેની તરફ ચાલો.”</div><div>“આજની મહેનત એ કાલની સફળતાનું બીજ છે.”</div><div>“હાર એ અંત નથી, ત્યાંથી શીખીને ફરી ઊભા થવું એ જ જીત છે.”</div><div>“જે સમયને સાચવે છે, સમય તેને સાચવે છે.”</div><div>“મુશ્કેલ વિષય નથી હોતો, ફક્ત હજી સમજાયો નથી હોતો.”</div><div>“નાનું રોજનું પગલું પણ એક દિવસ મોટી મંઝિલે પહોંચાડે છે.”</div><div>“વિશ્વાસ રાખો, મહેનત ક્યારેય નિષ્ફળ જતી નથી.”</div></div>
+</main>
+<footer>🙏 શ્રી ગણેશાય નમઃ • જય માં સરસ્વતી • હર હર મહાદેવ</footer>
+<script id="data" type="application/json">{"s":[{"n":"Gohil Rudra","ph":"","f":"Alpesh bhai","ct":"Surat","std":"11","rl":"42","p":41,"c":24,"m":19,"hb":[61,65,67,70,71,73],"hg":[0,0,0,0,0,0],"hm":[75,80,46,90,50,84],"ha":[0,0,0,0,0,0],"w":[{"s":"CHEMISTRY","t":":","w":0},{"s":"MATHEMATICS","t":":","w":0}],"b":73,"g":0,"a":0,"t":84}]}</script>
+<script>
+const H="4d3e9157df0f19ed820c68679bc160272f8b2f80b312930e806c3d7bea1accd7",HA="4ae3ac0da5e71dc02166eeb57a3955f050ac6893041d609549ff1130a6c89333";
+const MB=[[300,"MIT Students"],[290,"Legendary"],[271,"IIT Students"],[251,"Toppers"],[211,"Supreme"],[191,"Diamond"],[171,"Gold"],[151,"Platinum"],[130,"Silver"],[100,"Bronze"]];
+const AB=[[360,"MIT Students"],[270,"Legendary"],[230,"IIT Students"],[190,"Toppers"],[160,"Supreme"],[130,"Diamond"],[110,"Gold"],[100,"Platinum"],[95,"Silver"],[85,"Bronze"]];
+const D=JSON.parse(document.getElementById("data").textContent),$=i=>document.getElementById(i);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const last=a=>a&&a.length?a[a.length-1]:0;const nz=s=>{s.b=last(s.hb);s.g=last(s.hg);s.a=last(s.ha);s.t=last(s.hm)||(s.p+s.c+s.m);return s};
+D.s.forEach(s=>{s.b=last(s.hb);s.g=last(s.hg);s.a=last(s.ha);s.t=last(s.hm)||(s.p+s.c+s.m)});
+const ok=s=>s.b>=86&&s.g>=110, tot=s=>s.t;
+const bt=(v,T)=>{for(const[t,n]of T)if(v>=t)return n;return null};
+const mb=s=>ok(s)?bt(tot(s),MB):null, ab=s=>ok(s)&&s.a?bt(s.a,AB):null;
+const rice=s=>!mb(s)&&!ab(s);
+async function sha(t){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t.trim().toLowerCase().replace(/\s+/g," ")));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function gate(form,inp,hash,key,err,done){try{if(sessionStorage.getItem(key)===hash)done()}catch(e){}
+form.onsubmit=async e=>{e.preventDefault();if(await sha(inp.value)===hash){try{sessionStorage.setItem(key,hash)}catch(x){}done()}else err.textContent="પાસવર્ડ ખોટો છે."}}
+gate($("lf"),$("pw"),H,"ok",$("e1"),()=>document.body.classList.remove("locked"));
+gate($("af"),$("ap"),HA,"adm",$("e2"),()=>{$("alock").hidden=true;$("apanel").hidden=false;subs()});
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("on",x===b));document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.id===b.dataset.t))});
+function board(el,T,get,val,label){let h="";
+for(const[,n]of T){const L=D.s.filter(s=>get(s)===n).sort((a,b)=>val(b)-val(a));if(!L.length)continue;
+h+=`<div class="bt">${n} બેચ</div>`+L.map((s,i)=>`<div class="row r${i<3?i+1:0}"><span class="rk">${["🥇","🥈","🥉"][i]||"#"+(i+1)}</span><span class="nm">${esc(s.n)}</span><span class="mk">${val(s)}</span></div>`).join("")}
+const R=D.s.filter(rice).sort((a,b)=>tot(b)-tot(a));
+if(R.length)h+=`<div class="bt">Rice બેચ</div>`+R.map((s,i)=>`<div class="row r${i<3?i+1:0}"><span class="rk">${["🥇","🥈","🥉"][i]||"#"+(i+1)}</span><span class="nm">${esc(s.n)}</span><span class="mk">${tot(s)}</span></div>`).join("");
+el.innerHTML=h||"<p>હજી કોઈ વિદ્યાર્થી ઉમેર્યા નથી.</p>"}
+const SN={P:"Physics",C:"Chemistry",M:"Maths"};
+function tasks(s){const sub=[["P",s.p],["C",s.c],["M",s.m]].sort((a,b)=>a[1]-b[1]);const lo=sub[0];
+let h=`<h3>${esc(s.n)} — JEE Main ${tot(s)}/300 ${mb(s)?"• "+mb(s)+" બેચ":"• Rice બેચ"}</h3>`;
+if(!ok(s))h+=`<div class="task rice">શરત અધૂરી: ${s.b<86?"Board 86% કરતાં ઓછું. ":""}${s.g<110?"GUJCET 110 કરતાં ઓછું.":""} બેચ માટે આ સુધારો.</div>`;
+h+=`<div class="task"><b>નબળો વિષય: ${SN[lo[0]]} (${lo[1]}/100)</b><br>દિવસ 1: NCERT + થિયરી • દિવસ 2-3: 40 પ્રશ્નો રોજ • દિવસ 4: ભૂલ વાળા ફરી ઉકેલો • દિવસ 5: ટોપિક ટેસ્ટ • અઠવાડિયા અંતે: પૂરું JEE પેપર</div>`;
+if(lo[1]<60)h+=`<div class="task rice"><b>અઠવાડિયું 1-2:</b> ${SN[lo[0]]} નો બેઝિક કોર્સ ફરી પૂરો કરો, રોજ 2 કલાક.</div>`;
+(s.w||[]).slice().sort((a,b)=>b.w-a.w).forEach(t=>{const n=Math.max(20,t.w*3);h+=`<div class="task"><b>${SN[t.s]||t.s}: ${esc(t.t)}</b> (${t.w} ભૂલ)<br>દિવસ 1: કન્સેપ્ટ નોટ્સ • દિવસ 2: ${n} પ્રશ્નો • દિવસ 3: ભૂલ ફરી ઉકેલો • અઠવાડિયા અંતે: ટોપિક ટેસ્ટ</div>`});
+if(s.a)h+=`<div class="task">JEE Advanced ${s.a}/360 ${ab(s)?"• "+ab(s)+" બેચ":""}: દર અઠવાડિયે 1 Advanced પેપર.</div>`;
+return h}
+const COL=["#d4af37","#38bdf8","#f472b6","#34d399"];
+const EX=[["Board %",s=>s.b,100,"hb"],["GUJCET",s=>s.g,120,"hg"],["JEE Main",s=>s.t,300,"hm"],["JEE Advanced",s=>s.a,360,"ha"]];
+const av=s=>s.ph?`<img class="av" src="${s.ph}" alt="${esc(s.n)}">`:`<div class="av">${esc(s.n.charAt(0))}</div>`;
+function line(t,v,mx,c){if(!v||!v.length)return"";const x=i=>20+i*(260/Math.max(1,v.length-1)),y=u=>95-(u/mx)*70;
+return `<div class="ch"><b>${t} (${mx})</b><svg viewBox="0 0 300 110"><polyline points="${v.map((u,i)=>x(i)+","+y(u)).join(" ")}" fill="none" stroke="${c}" stroke-width="2.5"/>${v.map((u,i)=>`<circle cx="${x(i)}" cy="${y(u)}" r="3.5" fill="${c}"/><text x="${x(i)}" y="${y(u)-8}" font-size="10" fill="currentColor" text-anchor="middle">${u}</text>`).join("")}</svg></div>`}
+function allg(s){const n=Math.max(...EX.map(e=>(s[e[3]]||[]).length));if(!n)return"";let g="";
+EX.forEach((e,k)=>{const v=s[e[3]]||[];if(!v.length)return;g+=`<polyline points="${v.map((u,i)=>(20+i*(260/Math.max(1,n-1)))+","+(105-u/e[2]*90)).join(" ")}" fill="none" stroke="${COL[k]}" stroke-width="2.5"/>`});
+return `<div class="ch"><b>બધી પરીક્ષા એકસાથે (%)</b><svg viewBox="0 0 300 115">${g}</svg>${EX.map((e,k)=>`<span style="color:${COL[k]}">● ${e[0]}</span>`).join(" ")}</div>`}
+function prof(i){const s=D.s[i];$("prof").innerHTML=`<button type="button" id="bk">← પાછા</button><div class="pf">${av(s)}<div><h2>${esc(s.n)}</h2><div>${s.std?"ધોરણ "+esc(s.std)+" • ":""}${s.rl?"રોલ "+esc(s.rl)+" • ":""}${esc(s.ct||"")}</div><div style="color:var(--mut)">${s.f?"પિતા: "+esc(s.f):""}</div><div class="chip">${mb(s)?mb(s)+" બેચ (Main)":"Rice બેચ"}${ab(s)?" • "+ab(s)+" (Advanced)":""}</div>${s.b>=75&&s.g>=115&&s.t>=210?'<div class="chip">NIT લાયક ✅</div>':""}${s.b>=75&&s.g>=117&&s.a>=200?'<div class="chip">IIT લાયક ✅</div>':""}</div></div>${allg(s)}<div class="cg">${EX.map((e,k)=>line(e[0],s[e[3]],e[2],COL[k])).join("")}</div>${tasks(s)}`;
+$("stg").hidden=true;$("bk").onclick=()=>{$("prof").innerHTML="";$("stg").hidden=false}}
+function render(){board($("lbm"),MB,mb,tot);board($("lba"),AB,ab,s=>s.a);
+$("stg").innerHTML=D.s.map((s,i)=>!s.n.toLowerCase().includes($("ss").value.trim().toLowerCase())?"":`<button type="button" class="sc" data-i="${i}">${av(s)}<b>${esc(s.n)}</b><span>${mb(s)||"Rice"}</span></button>`).join("")||"<p>હજી કોઈ વિદ્યાર્થી ઉમેર્યા નથી.</p>";
+document.querySelectorAll(".sc").forEach(b=>b.onclick=()=>prof(+b.dataset.i));
+let h="";EX.forEach(e=>{const f=e[1],A=D.s.filter(s=>f(s)>0).sort((a,b)=>f(b)-f(a));if(!A.length)return;const L=a=>a.map(s=>esc(s.n)+" ("+f(s)+")").join(", ");
+h+=`<div class="bt">${e[0]}</div><div class="task"><b>🏆 Toppers:</b> ${L(A.slice(0,3))}${A.length>3?`<br><b>📉 Tankers:</b> ${L(A.slice(-3).reverse())}`:""}</div>`});
+const P=D.s.map(s=>{const v=EX.filter(e=>e[1](s)>0).map(e=>e[1](s)/e[2]*100);return[s.n,v.length?v.reduce((a,b)=>a+b)/v.length:0]}).sort((a,b)=>b[1]-a[1]);
+const podh=[150,115,90],med=["🥇","🥈","🥉"],pod=P.slice(0,3).filter(p=>p[1]>0);
+h+=pod.length?`<div class="bt">🏆 Top 3</div><div class="pod">${[1,0,2].filter(i=>pod[i]).map(i=>`<div class="pc"><div class="pn">${esc(pod[i][0])}</div><div class="pb p${i+1}" style="--h:${podh[i]}px">${med[i]}<br>${pod[i][1].toFixed(0)}%</div></div>`).join("")}</div>`:"";
+h+=`<div class="bt">બધા વિદ્યાર્થી — સરેરાશ %</div>`+P.map(p=>`<div class="ob"><span>${esc(p[0])}</span><div class="bar" style="width:${p[1]}%"></div><b>${p[1].toFixed(0)}%</b></div>`).join("");
+$("tpl").innerHTML=h;
+const nit=s=>s.b>=75&&s.g>=115&&s.t>=210,iit=s=>s.b>=75&&s.g>=117&&s.a>=200;
+const ST=[["વિદ્યાર્થી",D.s.length],["બેચ મળ્યા",D.s.filter(s=>mb(s)||ab(s)).length],["NIT લાયક",D.s.filter(nit).length],["IIT લાયક",D.s.filter(iit).length]];
+$("stats").innerHTML=ST.map(a=>`<div class="stc"><b data-n="${a[1]}">0</b><span>${a[0]}</span></div>`).join("");
+document.querySelectorAll("[data-n]").forEach(e=>{const n=+e.dataset.n,t0=performance.now();const f=t=>{const k=Math.min(1,(t-t0)/1200);e.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)});
+$("ss").oninput=render;
+const lst=(f,v)=>{const A=D.s.filter(f).sort((a,b)=>v(b)-v(a));return A.length?A.map(s=>`<div>✅ ${esc(s.n)} <span style="color:var(--mut)">(${v(s)})</span></div>`).join(""):"<div style='color:var(--mut)'>હજી કોઈ નથી</div>"};
+$("nl").innerHTML=lst(nit,s=>s.t);$("il").innerHTML=lst(iit,s=>s.a);
+$("al").innerHTML=D.s.map((s,i)=>`<div class="row"><span class="nm">${esc(s.n)}</span><button type="button" data-d="${i}">કાઢો</button></div>`).join("");
+document.querySelectorAll("[data-d]").forEach(b=>b.onclick=()=>{D.s.splice(+b.dataset.d,1);save()})}
+async function save(){const a=window.claude&&await claude.use("artifact");if(!a){$("e3").textContent="સેવ કરવા માટે owner એકાઉન્ટથી સાઇન-ઇન કરીને ખોલો.";return}
+const c=document.documentElement.cloneNode(true);c.querySelector("#data").textContent=JSON.stringify(D);
+["lbm","lba","stg","prof","tpl","al","sn","subs"].forEach(i=>c.querySelector("#"+i).innerHTML="");c.querySelector("body").className="locked";c.querySelector("#alock").hidden=false;c.querySelector("#apanel").hidden=true;
+try{await a.publish("<!DOCTYPE html>"+c.outerHTML)}catch(e){$("e3").textContent="પબ્લિશ ન થયું: "+(e.code||e.message)}}
+const ph=f=>new Promise(r=>{if(!f)return r("");const i=new Image;i.onload=()=>{const c=document.createElement("canvas");c.width=c.height=140;const m=Math.min(i.width,i.height);c.getContext("2d").drawImage(i,(i.width-m)/2,(i.height-m)/2,m,m,0,0,140,140);r(c.toDataURL("image/jpeg",.7))};i.onerror=()=>r("");i.src=URL.createObjectURL(f)});
+const L6=i=>$(i).value.split(",").map(x=>parseFloat(x)).filter(x=>!isNaN(x)).slice(-6);
+$("add").onclick=async()=>{const n=$("fn").value.trim(),v=i=>parseFloat($(i).value);
+const s={n,ph:await ph($("fph").files[0]),f:$("ff2").value.trim(),ct:$("fc2").value.trim(),std:$("fs").value.trim(),rl:$("fr").value.trim(),p:v("fp"),c:v("fc"),m:v("fm"),hb:L6("hb"),hg:L6("hg"),hm:L6("hm"),ha:L6("ha"),w:$("fw").value.split("\n").map(l=>l.trim().split(/\s+/)).filter(x=>x.length>=3).map(x=>({s:x[0].toUpperCase(),t:x.slice(1,-1).join(" "),w:+x[x.length-1]||0}))};
+if(!n||[s.p,s.c,s.m].some(isNaN)||!s.hb.length||!s.hg.length){$("e3").textContent="નામ, P/C/M ગુણ, Board અને GUJCET ગુણ જરૂરી છે.";return}
+D.s.push(nz(s));save()};
+const KEY={"Board %":"hb","GUJCET":"hg","JEE Main":"hm","JEE Advanced":"ha"},MX={hb:100,hg:120,hm:300,ha:360};
+const kn=k=>Object.keys(KEY).find(a=>KEY[a]===k);
+function fillSn(){$("sn").innerHTML=D.s.map(s=>`<option value="${esc(s.n)}">${esc(s.n)}</option>`).join("")}
+$("sb").onclick=async()=>{const v=parseFloat($("sv").value),k=KEY[$("se").value];
+if(!$("sn").value||isNaN(v)||v<0||v>MX[k]){$("e4").textContent="સાચા ગુણ લખો (મહત્તમ "+MX[k]+").";return}
+const db=window.claude&&await claude.use("db");if(!db){$("e4").textContent="માર્ક્સ મોકલવા સાઇન-ઇન જોઈએ.";return}
+try{await db.collection("submissions").add({n:$("sn").value,k,v,t:Date.now()});$("e4").textContent="મોકલાઈ ગયા. Admin સ્વીકારશે એટલે દેખાશે."}catch(e){$("e4").textContent="મોકલાયું નહીં: "+(e.code||e.message)}};
+async function subs(){const db=window.claude&&await claude.use("db");if(!db)return;try{const q=await db.collection("submissions").get();
+$("subs").innerHTML=q.docs.map(d=>{const x=d.data();return `<div class="row"><span class="nm">${esc(x.n)} • ${kn(x.k)} • ${x.v}</span><button data-ok="${d.id}" type="button">સ્વીકારો</button><button data-no="${d.id}" type="button">ના</button></div>`}).join("")||"<p>કોઈ નવા માર્ક્સ નથી.</p>";
+q.docs.forEach(d=>{const x=d.data();
+document.querySelector(`[data-no="${d.id}"]`).onclick=async()=>{await db.collection("submissions").doc(d.id).delete();subs()};
+document.querySelector(`[data-ok="${d.id}"]`).onclick=async()=>{const s=D.s.find(z=>z.n===x.n);if(s){s[x.k]=[...(s[x.k]||[]),x.v].slice(-6);nz(s)}await db.collection("submissions").doc(d.id).delete();save()}})}catch(e){}}
+render();fillSn();
+</script></body></html>
